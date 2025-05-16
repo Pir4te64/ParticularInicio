@@ -38,8 +38,8 @@ function CameraMouseController() {
 
   useFrame(() => {
     // Movimiento sutil en X
-    const minX = -8;
-    const maxX = 8;
+    const minX = -200;
+    const maxX = 100;
     const desiredX = THREE.MathUtils.lerp(minX, maxX, (mouse.x + 1) / 2);
     targetX.current = THREE.MathUtils.lerp(targetX.current, desiredX, 0.04);
 
@@ -53,13 +53,13 @@ function CameraMouseController() {
 }
 
 function WaveField({
-  lines = 20,         // Pocas líneas, bien separadas
+  lines = 40,         // Pocas líneas, bien separadas
   points = 600,
-  width = 80,
-  depth = 500,
-  amplitude = 70,    // Más bajo para sutilidad
-  speed = 0.6,        // Más lento
-  frequency = 0.1,   // Frecuencia de la onda
+  width = 5,
+  depth = 60,
+  amplitude = 5,    // Más bajo para sutilidad
+  speed = 0.5,        // Más lento
+  frequency = 0.4,   // Frecuencia de la onda
 }) {
   const meshRefs = useRef([]);
   const glowRefs = useRef([]);
